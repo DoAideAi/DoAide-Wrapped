@@ -5,11 +5,11 @@ Claude Code, Codex, Cursor and Hermes Agent already keep on your computer, and t
 year-in-review card: tokens, prompts, streak, your most-used model, a persona and one line of roast.
 Nothing is uploaded.
 
-> Status: v0.1, scaffolded 30 Oct 2026. Python standard library only (3.9+), 49 behaviour tests.
-> The parsers were built against real logs on one Mac (Claude Code desktop 2026, Codex Desktop and
-> `codex exec`, Cursor, Hermes) and read 5,400 log files (5.1 GB) in about 5 seconds. Not yet run on
-> anyone else's machine, on Linux or on Windows, and not yet published: the GitHub and
-> wrapped.doaide.com links below are where it will live.
+> Status: v0.1, published 30 Oct 2026 ([wrapped.doaide.com](https://wrapped.doaide.com)). Python
+> standard library only (3.9+), 49 behaviour tests, CI on Python 3.9, 3.12 and 3.14. The parsers were
+> built against real logs on one Mac (Claude Code desktop 2026, Codex Desktop and `codex exec`,
+> Cursor, Hermes) and read 5,400 log files (5.1 GB) in about 5 seconds. Not yet run on anyone else's
+> machine, on Linux or on Windows.
 
 ## Run it
 
