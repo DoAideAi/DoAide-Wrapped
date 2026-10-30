@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent Wrapped: your year with AI coding agents</title>
+<meta name="description" content="One command turns your Claude Code, Codex, Cursor and Hermes logs into a card worth posting. Nothing is uploaded.">
+<style>
+:root{--ink:#0b0716;--lime:#c8ff4d;--muted:#a9a3c7;--panel:#160f2e;--line:#2b1f4d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:#f5f5f7;font:17px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1040px;margin:0 auto;padding:40px 20px 60px;display:grid;gap:40px}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:36px;align-items:center}
+@media (max-width:800px){.hero{grid-template-columns:minmax(0,1fr)}}
+h1{font-size:clamp(34px,5vw,54px);line-height:1.05;margin:0 0 14px}
+h2{font-size:24px;margin:0 0 10px}
+.kicker{color:var(--lime);font-weight:800;letter-spacing:.2em;font-size:13px}
+p{margin:0 0 12px;color:#dcd8ee}
+.muted{color:var(--muted);font-size:14px}
+.cmd{display:flex;gap:8px;align-items:stretch;margin:16px 0 6px}
+code,pre{font:15px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+.cmd code,pre{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;
+overflow-x:auto;white-space:pre;flex:1;min-width:0;margin:0}
+button{font:700 15px system-ui,sans-serif;border:0;border-radius:12px;padding:0 16px;background:var(--lime);
+color:var(--ink);cursor:pointer}
+figure{margin:0}
+figure svg{width:100%;height:auto;border-radius:22px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+figcaption{color:var(--muted);font-size:13px;text-align:center;margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}
+.tip{border-color:var(--lime)}
+a{color:var(--lime)}
+footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:18px}
+</style></head><body><main>
+<section class="hero">
+<div>
+<div class="kicker">AGENT WRAPPED</div>
+<h1>Your year with AI coding agents, as one card.</h1>
+<p>One command reads the logs Claude Code, Codex, Cursor and Hermes Agent already keep on your
+computer: tokens, prompts, streaks, your most-used model, a persona and one line of roast.
+Nothing is uploaded.</p>
+<div class="cmd"><code id="install">uvx --from git+https://github.com/DoAideAi/DoAide-Wrapped agent-wrapped</code><button data-copy="install">Copy</button></div>
+<p class="muted">Needs Python 3.9+ and <a href="https://docs.astral.sh/uv/">uv</a>. Or clone
+<a href="https://github.com/DoAideAi/DoAide-Wrapped">the repository</a> and run <code>python3 -m agent_wrapped</code>.</p>
+</div>
+<figure><svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#2b1060"/><stop offset="0.55" stop-color="#140a2e"/><stop offset="1" stop-color="#07060d"/></linearGradient><linearGradient id="pill" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c8ff4d"/><stop offset="1" stop-color="#5ff2ff"/></linearGradient></defs>
+<rect width="1080" height="1350" fill="url(#bg)"/>
+<circle cx="1020" cy="140" r="260" fill="#ff5fd2" opacity="0.10"/>
+<circle cx="930" cy="400" r="140" fill="#5ff2ff" opacity="0.07"/>
+<text x="80" y="110" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="30" font-weight="800" fill="#c8ff4d" text-anchor="start" letter-spacing="6">AGENT WRAPPED · 2026</text>
+<text x="80" y="190" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="64" font-weight="800" fill="#f5f5f7" text-anchor="start">My year in AI agents</text>
+<text x="80" y="244" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="34" font-weight="600" fill="#aaa4c8" text-anchor="start">Claude Code · Codex · Cursor</text>
+<text x="74" y="450" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="230" font-weight="900" fill="#c8ff4d" text-anchor="start">4.2B</text>
+<text x="80" y="506" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="44" font-weight="700" fill="#f5f5f7" text-anchor="start">tokens through my agents</text>
+<text x="80" y="615" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="76" font-weight="800" fill="#f5f5f7" text-anchor="start">6,180</text>
+<text x="80" y="655" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="28" font-weight="500" fill="#aaa4c8" text-anchor="start">prompts sent</text>
+<text x="560" y="615" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="76" font-weight="800" fill="#f5f5f7" text-anchor="start">1,240</text>
+<text x="560" y="655" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="28" font-weight="500" fill="#aaa4c8" text-anchor="start">sessions</text>
+<text x="80" y="750" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="76" font-weight="800" fill="#f5f5f7" text-anchor="start">214</text>
+<text x="80" y="790" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="28" font-weight="500" fill="#aaa4c8" text-anchor="start">active days</text>
+<text x="560" y="750" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="76" font-weight="800" fill="#f5f5f7" text-anchor="start">41</text>
+<text x="560" y="790" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="28" font-weight="500" fill="#aaa4c8" text-anchor="start">day streak</text>
+<text x="80" y="885" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="76" font-weight="800" fill="#f5f5f7" text-anchor="start">612h</text>
+<text x="80" y="925" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="28" font-weight="500" fill="#aaa4c8" text-anchor="start">with my agents</text>
+<text x="560" y="885" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="76" font-weight="800" fill="#f5f5f7" text-anchor="start">$3,480</text>
+<text x="560" y="925" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="28" font-weight="500" fill="#aaa4c8" text-anchor="start">API-equivalent cost</text>
+<text x="80" y="990" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="24" font-weight="700" fill="#aaa4c8" text-anchor="start" letter-spacing="4">MOST-USED MODEL</text>
+<text x="80" y="1036" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="42" font-weight="700" fill="#f5f5f7" text-anchor="start">Claude Opus 5 · 58% of replies</text>
+<rect x="80" y="1066" width="364" height="60" rx="30" fill="url(#pill)"/>
+<text x="262" y="1107" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="30" font-weight="900" fill="#0b0716" text-anchor="middle" letter-spacing="3">THE NIGHT OWL</text>
+<text x="80" y="1166" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="30" font-weight="600" fill="#f5f5f7" text-anchor="start">38% of prompts after 10pm</text>
+<text x="80" y="1212" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="27" font-weight="500" fill="#aaa4c8" text-anchor="start" font-style="italic">You interrupted your agent 412 times. It never once</text>
+<text x="80" y="1246" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="27" font-weight="500" fill="#aaa4c8" text-anchor="start" font-style="italic">interrupted you.</text>
+<circle cx="90" cy="1290" r="10" fill="#c8ff4d"/>
+<text x="110" y="1300" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="28" font-weight="700" fill="#f5f5f7" text-anchor="start">agent-wrapped by DoAide  ·  wrapped.doaide.com</text>
+<text x="80" y="1332" font-family="Inter, &#x27;SF Pro Display&#x27;, &#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="20" font-weight="500" fill="#aaa4c8" text-anchor="start">Made from local logs. Nothing left this machine.</text>
+</svg>
+<figcaption>Example card with made-up numbers. Yours is made on your machine.</figcaption></figure>
+</section>
+<section class="box tip">
+<h2>Do this today: keep your Claude Code history</h2>
+<p>Claude Code deletes session transcripts after 30 days unless you change
+<code>cleanupPeriodDays</code>. Raise it now and December's card covers the year. Already-deleted
+sessions can't come back.</p>
+<div class="cmd"><pre id="keep">{ "cleanupPeriodDays": 3650 }</pre><button data-copy="keep">Copy</button></div>
+<p class="muted">Add it to <code>~/.claude/settings.json</code>.
+<a href="https://code.claude.com/docs/en/settings-reference#cleanupperioddays">Claude Code's settings reference</a>.</p>
+</section>
+<section class="grid">
+<div class="box"><h2>Private by design</h2><p>Reads the logs where they are and never writes to them. Message text is
+only checked to tell your prompts from tool output. No network requests. The card shows totals, never
+project names, prompts or paths.</p></div>
+<div class="box"><h2>Four agents, one year</h2><p>Claude Code, Codex (Desktop and CLI), Cursor and Hermes
+Agent, merged into one set of numbers. Missing an agent?
+<a href="https://github.com/DoAideAi/DoAide-Wrapped/issues/new?template=new-agent.yml">Ask for it</a>.</p></div>
+<div class="box"><h2>Honest numbers</h2><p>Replies that agents log over several lines count once, background-task
+notifications and scripted runs don't count as prompts, and costs are what the agents themselves recorded.</p></div>
+</section>
+<footer>MIT licensed · <a href="https://github.com/DoAideAi/DoAide-Wrapped">source</a> · DoAide. Not affiliated with Anthropic, OpenAI,
+Anysphere (Cursor) or Nous Research.</footer>
+</main>
+<script>
+document.querySelectorAll("button[data-copy]").forEach(function (button) {
+  button.onclick = function () {
+    var text = document.getElementById(button.dataset.copy).textContent;
+    if (navigator.clipboard) { navigator.clipboard.writeText(text); }
+    button.textContent = "Copied";
+    setTimeout(function () { button.textContent = "Copy"; }, 1500);
+  };
+});
+</script>
+</body></html>

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-wrapped"
+dynamic = ["version"]
+description = "Your year with AI coding agents (Claude Code, Codex, Cursor, Hermes) as a shareable card, built from local logs."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "DoAide" }]
+keywords = ["claude-code", "codex", "cursor", "hermes", "ai-agents", "wrapped", "usage"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Environment :: Console",
+    "Topic :: Software Development",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/DoAideAi/DoAide-Wrapped"
+
+[project.scripts]
+agent-wrapped = "agent_wrapped.cli:main"
+
+[tool.setuptools]
+packages = ["agent_wrapped", "agent_wrapped.sources"]
+
+[tool.setuptools.dynamic]
+version = { attr = "agent_wrapped.__version__" }

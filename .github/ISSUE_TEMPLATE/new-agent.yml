@@ -1,0 +1,30 @@
+name: Support another agent
+description: Gemini CLI, OpenCode, Copilot, Aider, Windsurf, or anything else that keeps logs.
+labels: ["new-agent"]
+body:
+  - type: input
+    id: agent
+    attributes:
+      label: Which agent?
+      placeholder: "Gemini CLI 1.4"
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Where does it keep its history?
+      description: The folder or database, if you know it.
+      placeholder: "~/.gemini/tmp/<hash>/chats/*.json"
+  - type: textarea
+    id: shape
+    attributes:
+      label: What a log entry looks like (keys only)
+      description: The field names of one entry, with every value replaced by a type, for example {"type":"str","timestamp":"str","usage":{"input":"int"}}.
+      render: json
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy
+      options:
+        - label: I replaced every value with its type; nothing pasted is real content.
+          required: true

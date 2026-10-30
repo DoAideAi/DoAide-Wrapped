@@ -1,0 +1,10 @@
+# cards are made from your own logs: keep them out of git
+agent-wrapped-*/
+
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+.DS_Store

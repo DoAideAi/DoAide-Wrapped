@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: I want Agent Wrapped for my team
+    url: https://github.com/DoAideAi/DoAide-Wrapped/issues/new?labels=interest-team&title=%5Binterest%5D+team&body=How+many+people%2C+which+agents%2C+and+what+would+you+want+to+see+for+the+whole+team%3F
+    about: A team-wide year in review for an engineering org. Say how many people and which agents.
+  - name: I want this for a business (events, sponsorship, a branded edition)
+    url: https://github.com/DoAideAi/DoAide-Wrapped/issues/new?labels=interest-business&title=%5Binterest%5D+business&body=Who+are+you%2C+and+what+would+you+want+built%3F
+    about: Conferences, communities, tool vendors. One line is enough.

@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.9", "3.12", "3.14"]
+    # Official Python images instead of actions/setup-python: Python 3.9 is past end-of-life and
+    # setup-python has no 3.9 build for the Ubuntu 26.04 image behind ubuntu-latest.
+    container: python:${{ matrix.python }}-slim
+    steps:
+      - uses: actions/checkout@v4
+      - name: Behaviour tests
+        run: python -m unittest discover -s tests -v
+      - name: Runs on a machine with no agent logs
+        run: python -m agent_wrapped --list

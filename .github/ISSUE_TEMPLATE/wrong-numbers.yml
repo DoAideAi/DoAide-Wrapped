@@ -1,0 +1,39 @@
+name: A number looks wrong
+description: Tokens, prompts, cost or streaks that don't match what you expected.
+labels: ["wrong-numbers"]
+body:
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Which agent's numbers look wrong?
+      options: ["Claude Code", "Codex", "Cursor", "Hermes Agent", "More than one"]
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: "`agent-wrapped --version`, the agent's version, and your OS."
+      placeholder: "agent-wrapped 0.1.0, Claude Code 2.1.250, macOS 26"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What looked wrong, and what did you expect?
+      description: "For example: \"prompts says 4,000, I typed maybe 500\", or \"tokens are 10x what ccusage shows\"."
+    validations:
+      required: true
+  - type: textarea
+    id: numbers
+    attributes:
+      label: The totals from `agent-wrapped --json`
+      description: Paste only the "agents" and "totals" sections. Do not run it with --show-projects.
+      render: json
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy
+      options:
+        - label: What I pasted contains no project names, file paths, prompts or code.
+          required: true
